@@ -131,7 +131,7 @@ async function handleProcess(selectedFiles: DirEntry[]) {
       function sanitizeFileName(fileName: string) {
         return fileName.replace(/[<>:"/\\|?*\x00-\x1F]/g, '_'); // Substitui caracteres inválidos por '_'
       }
-      const name = sanitizeFileName(`OK - ${body.NFE} - ${body.NomeCompleto} - ${body.DataEmissao}.pdf`);
+      const name = sanitizeFileName(`OK - ${body.NomeCompleto} - ${body.NFE} - ${body.DataEmissao}.pdf`);
        console.log(name)
       // const result: any = await invoke("rename_file", {old: fileName, new: name});
       // console.log(result)
