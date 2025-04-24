@@ -1,0 +1,34 @@
+[package]
+name = "allugator-utilities"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["you"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "allugator_utilities_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+dirs = "5.0"
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri-plugin-fs = { version = "2.0.0", features = ["watch"] }
+tauri-plugin-dialog = "2"
+lopdf = { version = "0.35.0", features = ["nom", "nom_parser"] }
+directories = "6.0.0"
+tokio = "1.43.0"
+quick-xml = "0.37.2"
+xml = "0.8.16"
+roxmltree = "0.20.0"
+xmlparser = "0.13.6"
